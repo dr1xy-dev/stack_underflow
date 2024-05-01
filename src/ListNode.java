@@ -1,9 +1,21 @@
 public class ListNode {
-    int data;
-    ListNode next;
+    private String data;
+    private ListNode next;
 
-    ListNode(int data) {
+    public ListNode(String data) {
         this.data = data;
         next = null;
+    }
+
+    public String getValue() {
+        return data;
+    }
+
+    public ListNode getNext() {
+        return next;
+    }
+
+    public void setNext(ListNode node) {
+        next = node;
     }
 }
