@@ -21,14 +21,28 @@ public class Stack {
             return false;
         }
     }
-    public void push(String s) {
+
+    public boolean isFull() {
+        if (items >= capacity) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    public boolean push(String s) {
         // start at the head
+
+        if (items + 1 > capacity) {
+            return false;
+        }
+
         if (head == null) {
             // if head is null then create the first node
             head = new ListNode(s);
             topNode = head;
 
             items++;
+            return true;
         } else {
             // current node
             ListNode current = head;
@@ -42,6 +56,8 @@ public class Stack {
             current.setNext(node);
 
             topNode = node;
+            items++;
+            return true;
         }
     }
 
@@ -73,7 +89,7 @@ public class Stack {
         System.out.println(current.getValue());
     }
 
-    public void allNodes() {
-
+    public int size() {
+        return items;
     }
 }
